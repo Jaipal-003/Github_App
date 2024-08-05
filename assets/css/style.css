@@ -427,6 +427,42 @@ body {
 
 /* Skeleton */
 
+.avatar-skeleton{
+  width:160px;
+  height: 160px;
+  border-radius: var(--radius-circle);
+  background-color: var(--alpha-10);
+}
+.title-skeleton,
+.text-skeleton{
+  border-radius: var(--radius-pill);
+}
+.title-skeleton{
+  max-width: 180px;
+  width: 100%;
+  height: 24px;
+  background-color: var(--alpha-10);
+}
+.text-skeleton{
+  background-color: var(--alpha-5);
+  height: 16px;
+}
+
+
+
+.profile-skeleton .title-skeleton{margin-block: 24px;} 
+
+.profile-skeleton .text-skeleton{
+margin-block-start: 12px;
+}
+.profile-skeleton .text-1{
+  width: 55%;
+}
+
+.profile-skeleton .text-3{
+  width: 70%;
+}
+
 
 
 
