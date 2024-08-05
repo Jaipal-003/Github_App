@@ -1,7 +1,7 @@
 /**
- * @license MIT
- * @author codewithsadee <mohammadsadee24@gmail.com>
- * @copyright codewithsadee 2023
+ * @param{*}$ elements 
+ * @param{*}eventType
+ * @param{*}callback
  */
 
 
