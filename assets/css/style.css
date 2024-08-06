@@ -448,8 +448,6 @@ body {
   height: 16px;
 }
 
-
-
 .profile-skeleton .title-skeleton{margin-block: 24px;} 
 
 .profile-skeleton .text-skeleton{
@@ -464,7 +462,20 @@ margin-block-start: 12px;
 }
 
 
-
+.skeleton{
+  position: relative;
+  overflow: hidden;
+}
+.skeleton::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, transparent, var(--alpha-5),transparent);
+  animation: skeleton-loading 1.5s linear infinite;
+}
 
 
 /*-----------------------------------*\

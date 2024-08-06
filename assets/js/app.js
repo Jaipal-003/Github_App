@@ -38,4 +38,3 @@ $searchToggler.addEventListener("click", function(){
    $searchField.focus();
 })
 
-console.log("hitesh")
