@@ -476,7 +476,11 @@ margin-block-start: 12px;
   background-image: linear-gradient(90deg, transparent, var(--alpha-5),transparent);
   animation: skeleton-loading 1.5s linear infinite;
 }
-
+@keyframes skeleton-loading{
+  0%{transform: translateX(0);}
+  
+  100%{transform: translateX(200%);}
+}
 
 /*-----------------------------------*\
   #SKIP TO CONTENT
