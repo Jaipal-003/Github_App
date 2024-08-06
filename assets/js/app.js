@@ -37,3 +37,5 @@ $searchToggler.addEventListener("click", function(){
    this.setAttribute("aria-expended", isExpended);
    $searchField.focus();
 })
+
+console.log("hitesh")
