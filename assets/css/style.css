@@ -337,6 +337,42 @@ body {
   border-radius: var(--radius-24);
 }
 
+.img-cover{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title-1{
+  font-size: var(--title-1);
+  font-weight: var(--weight-medium);
+  line-height: 72px;
+}
+
+
+.title-2{
+  font-size: var(--title-2);
+  line-height: 28px;
+font-weight: var(--weight-semiBold); 
+}
+
+
+.title-3{
+  font-size: var(--title-3);
+  line-height: 24px;
+  font-weight: var(--weight-regular);
+
+}
+
+.body{
+  font-size: var(--body);
+}
+.label-1{
+  font-size: var(--label-1);
+}
+.label-2{
+  font-size: var(--label-2);
+}
 
 
 
@@ -422,7 +458,22 @@ body {
 }
 
 /* Button */
-
+.btn{
+  padding-inline: 24px;
+  height: 40px;
+  font-size: var(--label-1);
+  font-weight: var(--weight-medium);
+  border-radius: var(--radius-8);
+  border: 1px solid transparent;
+  max-width: max-content;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  line-height: 40px;
+  transition: var(--transition-short);
+  
+}
 
 /* Badge */
 
