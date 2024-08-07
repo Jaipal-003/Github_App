@@ -322,6 +322,23 @@ body {
 
 }
 
+.img-holder{
+  aspect-ratio: var(--width) /  var(--height);
+  background-color: var(--alpha-50);
+  overflow: hidden;
+
+}
+
+.avatar-circle {
+  border-radius: var(--radius-circle);
+}
+
+.avatar-rounded{
+  border-radius: var(--radius-24);
+}
+
+
+
 
 /*-----------------------------------*\
   #COMPONENTS
