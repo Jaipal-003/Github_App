@@ -722,6 +722,34 @@ body {
 .profile-stats .stats-item{
   display: flex;
   align-items: center;
+  gap: 8px;
+  margin-block: 8px;
+
+}
+
+.profile-meta .meta-text{
+  font-size: var(--label-1);
+  min-width: 0;
+  white-space: nowrap;
+  text-overflow:  ellipsis;
+  overflow: hidden;
+  transition: var(--transition-short);
+}
+.profile-meta a.meta-text:where(:hover, :focus-visible){
+  color: var(--primary);
+}
+
+.profile-stats .stats-item{
+  color: var(--on-surface-variant);
+}
+
+.profile-stats .body{
+  color: var(--on-background);
+  font-weight: var(--weight-medium);
+}
+
+.profile .footer{
+  display: none;
 }
 
 /*-----------------------------------*\
