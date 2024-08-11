@@ -38,3 +38,15 @@ $searchToggler.addEventListener("click", function(){
    $searchField.focus();
 })
 
+/**
+ * Tab navigation
+ */
+
+const /**{NodeList} */ $tabBtns = document.querySelectorAll("[data-tab-btn]")
+const /**{NodeList} */ $tabPanels = document.querySelectorAll("[data-tab-panel]");
+
+let /**{NodeList} */  [$lastActiveTabBtn] = $tabBtns;
+let /**{NodeList} */  [$lastActiveTabPanel] = $tabPanels;
+addEventOnElement($tabBtns, "click", function(){
+
+})
