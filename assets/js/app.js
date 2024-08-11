@@ -51,6 +51,9 @@ addEventOnElement($tabBtns, "click", function(){
  $lastActiveTabBtn.setAttribute("aria-selected", "false");
  $lastActiveTabPanel.setAttribute("hidden","");
 
+
+
+ 
  this.setAttribute("aria-selected", "true");
  const/**{NodeList} */ 
 })
