@@ -96,10 +96,51 @@ addEventOnElement($tabBtns, "keydown", function (e){
 /** 
  * Search
  */
-const /**{NodeElement} */  $searchSubmit = document.querySelector("[]")
+const /**{NodeElement} */  $searchSubmit = document.querySelector("[data-search-submit]");
 
 
-let /**{String} */ apiUrl = "https://api.github.com/users/Jaipal-003"
+
+let /**{String} */ apiUrl = "https://api.github.com/users/Jaipal-003";
+let /**{String} */ repoUrl, followerUrl, followingUrl = "";
+
+const searchUser = function (){
+  if(!$searchField.value) return;
+
+  apiUrl= `https://api.github.com/users/${$searchField.value}`
+}
+
+
+$searchSubmit.addEventListener("click", searchUser);
+
+
+//Search when press Enter key
+
+$searchField.addEventListener("keydown", e => {
+  if(e.key === "Enter") searchUser();
+
+});
+
+/** 
+ * Profile
+ */
+
+const  /**{NodeElement} */ $profileCard = document.querySelector("[data-profile-card]")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 https://api.github.com/users/Jaipal-003
