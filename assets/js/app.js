@@ -1,61 +1,105 @@
+'use strict';
+
+
+import { fetchData } from "./api";
+ 
+
+
+
 /**
- * Add eventlisterner on multiple elements
- * @param{NodeList}$ elements  NodeList
- * @param{Sttring}eventType string
- * @param{Function}callback Function
+ * Add event listener on multiple elements
+ * @param {NodeList} $elements - NodeList
+ * @param {String} eventType - Event type
+ * @param {Function} callback - Callback function
  */
 
 
-'use strict';
-
-const addEventOnElement = function($elements, eventType, callback){
- for(const $item of $elements){
-    $item.addEventListener(eventType,callback);
- }
+const addEventOnElement = function ($elements, eventType, callback) {
+  for (const $item of $elements) {
+    $item.addEventListener(eventType, callback);
+  }
 }
 
 /**
  * Header scroll state
  */
 
-const /**{NodeElement} */ $header = document.querySelector("[data-header]");
-window.addEventListener("scroll",function (){
-   $header.classList[window.scrollY > 50 ? "add" : "remove"]("active");
+const /**{HTMLElement} */ $header = document.querySelector("[data-header]");
+window.addEventListener("scroll", function () {
+  $header.classList[window.scrollY > 50 ? "add" : "remove"]("active");
 });
 
 /**
  * Search toggle
  */
 
-const/**{NodeElement} */ $searchToggler = document.querySelector("[data-search-toggler]");
-const/**{NodeElement} */$searchField = document.querySelector("[data-search-field]");
-let /**{Boolean} */ isExpended = false;
+const /**{HTMLElement} */ $searchToggler = document.querySelector("[data-search-toggler]");
+const /**{HTMLElement} */ $searchField = document.querySelector("[data-search-field]");
+let /**{Boolean} */ isExpanded = false;
 
-$searchToggler.addEventListener("click", function(){
-   $header.classList.toggle("search-active");
-   isExpended = isExpended ? false : true;
-   this.setAttribute("aria-expended", isExpended);
-   $searchField.focus();
-})
+$searchToggler.addEventListener("click", function () {
+  $header.classList.toggle("search-active");
+  isExpanded = !isExpanded;
+  this.setAttribute("aria-expanded", isExpanded);
+  $searchField.focus();
+});
 
 /**
  * Tab navigation
  */
 
-const /**{NodeList} */ $tabBtns = document.querySelectorAll("[data-tab-btn]")
+const /**{NodeList} */ $tabBtns = document.querySelectorAll("[data-tab-btn]");
 const /**{NodeList} */ $tabPanels = document.querySelectorAll("[data-tab-panel]");
 
-let /**{NodeList} */  [$lastActiveTabBtn] = $tabBtns;
-let /**{NodeList} */  [$lastActiveTabPanel] = $tabPanels;
-addEventOnElement($tabBtns, "click", function(){
- $lastActiveTabBtn.setAttribute("aria-selected", "false");
- $lastActiveTabPanel.setAttribute("hidden","");
+let /**{HTMLElement} */ $lastActiveTabBtn = $tabBtns[0];
+let /**{HTMLElement} */ $lastActiveTabPanel = $tabPanels[0];
+
+addEventOnElement($tabBtns, "click", function () {
+  $lastActiveTabBtn.setAttribute("aria-selected", "false");
+  $lastActiveTabPanel.setAttribute("hidden", "");
+
+  this.setAttribute("aria-selected", "true");
+  const /**{HTMLElement} */ $currentTabPanel = document.querySelector(`#${this.getAttribute("aria-controls")}`);
+  $currentTabPanel.removeAttribute("hidden");
+
+  $lastActiveTabBtn = this;
+  $lastActiveTabPanel = $currentTabPanel;
+});
+
+/** 
+ * Keyboard accessibility for tab button
+ */
 
 
- this.setAttribute("aria-selected", "true");
- const/**{NodeList} */ 
+addEventOnElement($tabBtns, "keydown", function (e){
+   const /**{NodeElement} */ $nextElement = this.$nextElementSibling;
+   const /**{NodeElement} */ $previousElement = this.$previousElementSibling;
+
+
+
+   if(e.key === "ArrowRight" && $nextElement){
+      this.setAttribute("tabindex", "-1");
+      $nextElement.setAttribute("tabindex", "0");
+      $nextElement.focus();
+   }else if (e.key === "ArrowLeft" && $previousElement){
+      this.setAttribute("tabindex", "-1");
+      $previousElement.setAttribute("tabindex", "0");
+      $previousElement.focus();
+   }
 })
 
+/** 
+ * Work with API
+ */
 
 
+/** 
+ * Search
+ */
+const /**{NodeElement} */  $searchSubmit = document.querySelector("[]")
 
+
+let /**{String} */ apiUrl = "https://api.github.com/users/Jaipal-003"
+
+
+https://api.github.com/users/Jaipal-003
