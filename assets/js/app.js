@@ -124,7 +124,9 @@ $searchField.addEventListener("keydown", e => {
  * Profile
  */
 
-const  /**{NodeElement} */ $profileCard = document.querySelector("[data-profile-card]")
+const  /**{NodeElement} */ $profileCard = document.querySelector("[data-profile-card]");
+
+const  /**{NodeElement} */$repoPanel = document.querySelector("[data-repo-panel]");
 
 
 
@@ -143,4 +145,4 @@ const  /**{NodeElement} */ $profileCard = document.querySelector("[data-profile-
 
 
 
-https://api.github.com/users/Jaipal-003
+// https://api.github.com/users/Jaipal-003
