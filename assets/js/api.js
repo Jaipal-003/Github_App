@@ -17,8 +17,11 @@ export async function fetchData(url, successCallback, errorCallback) {
         const data = await response.json();
         successCallback(data);
     }else {
-        const error = await response.json();
+        const error = await response.json();                                                      
         errorCallback && errorCallback(error);
         
     }
 }
+
+
+
