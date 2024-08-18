@@ -475,8 +475,6 @@ const updateFollower = function () {
             <p class="text">Doesn't have any follower yet.</p>
           </div>
 
-
-          
       `;
     }
 
