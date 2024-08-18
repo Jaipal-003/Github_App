@@ -480,9 +480,11 @@ const updateFollower = function () {
 
 
 
-  })
+  });
 
 }
+
+
 $followerTabBtn.addEventListener("click" , updateFollower);
 
 
