@@ -336,10 +336,82 @@ const updateRepository = function (){
 /**
  * Forked Repository
  */
-// const $forkedPanel =  document.querySelector("[data-fork-panel]")
-// const $forkTabBtn = document
+const $forkePanel =  document.querySelector("[data-fork-panel]");
+const $forkTabBtn = document.querySelector("[data-forked-tab-btn]");
+
+const updateForkRepo = function(){
+  $forkePanel.innerHTML = `
+  <h2 class="sr-only">Forked repositories</h2>`;
 
 
+  if(forkedRepos.length){
+    for(const repo of forkedRepos){
+      const{
+        name,html_url,description,private:isPrivate,
+        language,stargazers_count : stars_count,forks_count
+      }=repo;
+
+      const $forkCard = document.createElement("article")
+      $forkCard.classList.add("card", "repo-card");
+
+      $forkCard.innerHTML = `
+       <div class="card-body">
+            <a href="${html_url}"   target="_blank" class="card-title">
+              <h3 class="title-3">${name}</h3>
+            </a>
+          ${description ? 
+           ` <p class="card-text">${description}
+             </p>` : ""
+            }
+            <span class="badge">${isPrivate ? "Private" : "Public" }</span>
+          </div>
+
+          <div class="card-footer">
+          ${language ?
+            `<div class="meta-item">
+              <span class="material-symbols-rounded" aria-hidden="true">code_blocks</span>
+
+              <span class="span">${language}</span>
+
+            </div>` : ""
+  }
+
+                
+
+            <div class="meta-item">
+              <span class="material-symbols-rounded" aria-hidden="true">star_rate</span>
+
+              <span class="span">${numberTokilo(stars_count)}</span>
+
+            </div>
+
+            <div class="meta-item">
+              <span class="material-symbols-rounded" aria-hidden="true">family_history</span>
+
+              <span class="span">${numberTokilo(forks_count)}</span>
+
+            </div>
+          </div>
+      `;
+
+      $forkePanel.appendChild($forkCard);
+    }
+  }else{
+    $forkePanel.innerHTML = `
+      <div class="error-content">
+          <p class="title-1">
+            Oops! :(
+          </p>
+          <p class="text">Doesn't have any forked repositories yet.</p>
+        </div>
+    
+    `;
+
+  }
+
+}
+
+$forkTabBtn.addEventListener("click",updateForkRepo);
 
 
 
