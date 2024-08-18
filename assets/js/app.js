@@ -478,8 +478,6 @@ const updateFollower = function () {
       `;
     }
 
-
-
   });
 
 }
