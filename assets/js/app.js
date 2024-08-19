@@ -87,7 +87,7 @@ addEventOnElement($tabBtns, "keydown", function (e) {
  * Search
  */
 const /**{HTMLElement} */ $searchSubmit = document.querySelector("[data-search-submit]");
-let /**{String} */ apiUrl = "https://api.github.com/users/codewithsadee";
+let /**{String} */ apiUrl = "https://api.github.com/users/Jaipal-003";
 let /**{String} */ repoUrl,followerUrl,followingUrl = "";
 
 const searchUser = function () {
@@ -502,7 +502,7 @@ const updateFollowing = function (){
     <div class="skeleton title-skeleton"></div>
   </div>
 
-`.repeat(12);
+`.repeat(10);
 
 
 fetchData(followingUrl, function(data){
@@ -563,4 +563,4 @@ $followingTabBtn.addEventListener("click",updateFollowing)
 
 
 
-// https://api.github.com/users/Jaipal-003
+// 
