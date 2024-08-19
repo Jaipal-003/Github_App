@@ -29,13 +29,14 @@ window.addEventListener("scroll", function () {
 const /**{HTMLElement} */ $searchToggler = document.querySelector("[data-search-toggler]");
 const /**{HTMLElement} */ $searchField = document.querySelector("[data-search-field]");
 let /**{Boolean} */ isExpanded = false;
-
 $searchToggler.addEventListener("click", function () {
   $header.classList.toggle("search-active");
-  isExpanded = !isExpanded ? false : true;
+  // Correct logic:
+  isExpanded = !isExpanded; 
   this.setAttribute("aria-expanded", isExpanded);
   $searchField.focus();
 });
+
 
 /**
  * Tab navigation
