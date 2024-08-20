@@ -166,6 +166,8 @@ window.updateProfile = function (profileUrl) {
     } = data;
 
     
+
+    
     repoUrl = repos_url;
     followerUrl = followers_url;
     followingUrl = following_url.replace("{/other_user}", "");
@@ -224,7 +226,7 @@ window.updateProfile = function (profileUrl) {
         </li>
       </ul>
       <div class="footer">
-        <p class="copyright">&copy; 2023 codewithsadee</p>
+        <p class="copyright">&copy; Jaipal-003 2024 </p>
       </div>
     `;
 
