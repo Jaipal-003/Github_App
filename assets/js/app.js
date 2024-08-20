@@ -159,6 +159,8 @@ window.updateProfile = function (profileUrl) {
       twitter_username,
       public_repos,
       followers,
+
+      
       following,
       followers_url,
       following_url,
@@ -170,7 +172,7 @@ window.updateProfile = function (profileUrl) {
 
 
 
-    
+
 
     
     repoUrl = repos_url;
