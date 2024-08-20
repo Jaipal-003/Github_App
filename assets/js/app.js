@@ -157,10 +157,13 @@ window.updateProfile = function (profileUrl) {
       company,
       blog: website,
       twitter_username,
+
+
+      
       public_repos,
       followers,
 
-      
+
       following,
       followers_url,
       following_url,
