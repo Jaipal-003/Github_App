@@ -152,6 +152,9 @@ window.updateProfile = function (profileUrl) {
       name,
       login: username,
       html_url: githubPage,
+
+
+      
       bio,
       location,
       company,
@@ -159,7 +162,7 @@ window.updateProfile = function (profileUrl) {
       twitter_username,
 
 
-      
+
       public_repos,
       followers,
 
