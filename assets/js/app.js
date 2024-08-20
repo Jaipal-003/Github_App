@@ -150,11 +150,14 @@ window.updateProfile = function (profileUrl) {
       type,
       avatar_url,
       name,
+
+
+      
       login: username,
       html_url: githubPage,
 
 
-      
+
       bio,
       location,
       company,
